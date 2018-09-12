@@ -1,0 +1,94 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: hsla(210, 100%, 50%, 0.5);
+  text-align: center;
+  color: hsla(0, 0%, 100%, 1);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, [col] 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+                      "head head head head"
+                      "intro intro intro intro"
+                      "main main main cotw"
+                      ". submit submit ."
+                      "footer footer footer footer";
+  grid-gap: 5px;
+}
+
+.box {
+  z-index: 2;
+}
+
+header {
+  grid-area: head;
+  background-color: hsla(230, 100%, 70%, 0.8);
+  border-bottom: 0.4rem solid hsla(100, 100%, 100%, 1);
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: bold;
+  text-align: left;
+  margin: 2rem auto 2rem 5%;
+}
+
+.logo {
+  height: 6rem;
+  object-fit: contain;
+  grid-area: 1 / 1 / span 1 / span 1;
+  z-index: 3;
+  margin-right: 2.5rem;
+  align-self: center;
+}
+
+.profile {
+  height: 3.5rem;
+  grid-area: 1 / 3 / span 1 / span 1;
+  z-index: 3;
+  align-self: center;
+  margin-left: 80%;
+}
+
+.register {
+  text-decoration: underline;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 1rem;
+  width: max-content;
+  align-self: center;
+  margin-left: 60%;
+  margin-right: 10%;
+  text-align: right;
+  background-color: hsla(250, 100%, 0%, 0.4);
+  grid-area: 1 / 4 / span 1 / span 1;
+  z-index: 3
+}
+
+.intro {
+  background-color: hsla(230, 100%, 50%, 0.1);
+  grid-area: intro;
+  padding: 1em;
+}
+
+main {
+  grid-area: main;
+  border: 2px solid hsla(240, 70%, 80%, 1);
+}
+
+.cotw {
+  grid-area: cotw;
+  border: 2px solid hsla(240, 70%, 80%, 1);
+}
+
+.submit {
+  grid-area: submit;
+  border: 2px solid hsla(240, 70%, 80%, 1);
+}
+
+footer {
+  grid-area: footer;
+  border: 2px solid hsla(240, 70%, 80%, 1);
+}
