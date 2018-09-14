@@ -1,8 +1,17 @@
 body {
   font-family: 'Raleway', sans-serif;
+  line-height: 1.25em;
   background-color: hsla(210, 100%, 50%, 0.5);
   text-align: center;
   color: hsla(0, 0%, 100%, 1);
+  z-index: 0;
+  overflow: visible;
+}
+
+a {
+  color: hsla(0, 0%, 100%, 1);
+  text-decoration: underline;
+  font-weight: 700;
 }
 
 .container {
@@ -15,80 +24,189 @@ body {
                       "main main main cotw"
                       ". submit submit ."
                       "footer footer footer footer";
-  grid-gap: 5px;
-}
-
-.box {
-  z-index: 2;
+  grid-gap: 3rem;
 }
 
 header {
   grid-area: head;
-  background-color: hsla(230, 100%, 70%, 0.8);
+  background: repeating-linear-gradient(
+    45deg,
+    hsla(0, 100%, 100%, 0),
+    hsla(0, 100%, 100%, 0) 10px,
+    hsla(230, 100%, 65%, 0.1) 10px,
+    hsla(230, 100%, 65%, 0.1) 20px
+    );
+    /* Alternative solid header
+  background-color: hsla(230, 100%, 65%, 0.6); */
   border-bottom: 0.4rem solid hsla(100, 100%, 100%, 1);
+  width: 100%;
+  height: auto;
+  position: fixed;
+  z-index: 1;
 }
 
 h1 {
   font-size: 3em;
-  font-weight: bold;
+  font-weight: 700;
   text-align: left;
-  margin: 2rem auto 2rem 5%;
+  margin: 2rem auto 2rem 6rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  line-height: 1.25em;
+}
+
+h3 {
+  font-size: 1.3em;
+  font-weight: 700;
+  line-height: 1.25em;
 }
 
 .logo {
   height: 6rem;
   object-fit: contain;
   grid-area: 1 / 1 / span 1 / span 1;
-  z-index: 3;
+  z-index: 2;
   margin-right: 2.5rem;
+  margin-top: 1rem;
   align-self: center;
+  position: fixed;
 }
 
 .profile {
   height: 3.5rem;
-  grid-area: 1 / 3 / span 1 / span 1;
-  z-index: 3;
+  grid-area: 1 / 4 / span 1 / span 1;
+  z-index: 2;
   align-self: center;
-  margin-left: 80%;
-}
+  margin: 1rem auto 1rem 85%;
+  position: fixed;
+  }
 
 .register {
-  text-decoration: underline;
-  font-size: 1rem;
-  font-weight: 700;
-  padding: 1rem;
-  width: max-content;
-  align-self: center;
-  margin-left: 60%;
-  margin-right: 10%;
-  text-align: right;
-  background-color: hsla(250, 100%, 0%, 0.4);
   grid-area: 1 / 4 / span 1 / span 1;
-  z-index: 3
+  z-index: 2;
+  position: fixed;
+  margin: 1.5rem auto 1.5rem 90%;
+  align-self: center;
+}
+
+.skip, .register {
+  text-decoration: underline;
+  font-weight: 700;
+  padding: 0.5em;
+  background-color: hsla(230, 70%, 50%, 0.3);
+}
+
+.intro, footer {
+  background-color: hsla(230, 100%, 50%, 0.1);
+  padding: 1em;
 }
 
 .intro {
-  background-color: hsla(230, 100%, 50%, 0.1);
   grid-area: intro;
-  padding: 1em;
+  margin-top: 5rem;
+}
+
+main, .cotw, .submit {
+  background: repeating-linear-gradient(
+    135deg,
+    hsla(0, 100%, 100%, 0.1),
+    hsla(0, 100%, 100%, 0.1) 10px,
+    hsla(230, 100%, 100%, 0.2) 10px,
+    hsla(230, 100%, 100%, 0.2) 20px
+    );
+    padding: 1rem;
+    border: 2px dashed hsla(240, 70%, 100%, 1);
+    border-radius: 20px;
 }
 
 main {
   grid-area: main;
-  border: 2px solid hsla(240, 70%, 80%, 1);
+  width: 60%;
+  margin-left: 20%;
+  display: inline;
+  align-self: center;
+}
+
+.catpic {
+  float: left;
+  margin: 3% auto auto 3%;
+  width: 40%;
+  border: 10px solid hsla(230, 100%, 65%, 0.1);
+  border-radius: 15px;
+}
+
+.interests {
+  text-align: left;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 3em;
+}
+
+.list {
+  text-align: left;
+  list-style-type: circle;
+  margin-left: 1em;
+}
+
+.description {
+  float: right;
+  width: 50%;
+}
+
+.stars {
+  padding: 1rem;
+}
+
+.stars img {
+  width: 15%;
 }
 
 .cotw {
   grid-area: cotw;
-  border: 2px solid hsla(240, 70%, 80%, 1);
+  margin-left: -10%;
+  margin-right: 5%;
+  width: auto;
+  height: auto;
+  align-self: center;
+  display: inline;
+}
+
+.average {
+  padding-top: 5%;
+  clear: both;
 }
 
 .submit {
   grid-area: submit;
-  border: 2px solid hsla(240, 70%, 80%, 1);
+}
+
+.subask {
+  float: left;
+  width: 30%;
+}
+
+.subask h2 {
+  background-color: hsla(230, 70%, 50%, 0.1);
+  margin: 0.5rem;
+}
+
+.usersubs {
+  float: right;
+  width: 70%;
+}
+
+.usersubs h2 {
+  background-color: hsla(230, 70%, 50%, 0.3);
+  margin: 0.5rem;
+}
+
+.usersubs img {
+  width: 10%;
+  border-radius: 10px;
 }
 
 footer {
   grid-area: footer;
-  border: 2px solid hsla(240, 70%, 80%, 1);
 }
