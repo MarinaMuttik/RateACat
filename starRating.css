@@ -1,0 +1,58 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: hsla(210, 100%, 50%, 0.5);
+  color: hsla(0, 0%, 100%, 1);
+  z-index: 0;
+  overflow: visible;
+  text-align: center;
+}
+
+table {
+  margin: 0 auto;
+  text-align: center;
+  border-collapse: collapse;
+  border: 1px solid #FFFFFF;
+  font-size: 20px;
+}
+
+table th,
+table tr:nth-child(2n+2) {
+  background: #e7e7e7;
+}
+
+table th,
+table td {
+  padding: 20px 50px;
+}
+
+table th {
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.starsOuter {
+  position: relative;
+  }
+
+.starsOuter::before {
+  content: "★ ★ ★ ★ ★";
+  color: #FFFFFF;
+  font-size: 3rem;
+  opacity: 0.5;
+}
+
+.starsInner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 50%;
+}
+
+
+.starsInner::before {
+  content: "★ ★ ★ ★ ★";
+  color: #FFFFFF;
+  font-size: 3rem;
+  opacity: 1.0;
+}
