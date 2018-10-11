@@ -1,2 +1,0 @@
-MM: 100%, 1.058278583 seconds, 1 turnsTG: 100%, 1.354041434 seconds, 1 turns
-Marina: 100%, 1.161654468 seconds, 10 turns: 100%, 1.504444396 seconds, 3 turns

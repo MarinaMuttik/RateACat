@@ -2,27 +2,25 @@ require "pry"
 
 # Main Code
 class Cat
-  CATS = []
+  attr_accessor :name, :breed, :age, :data, :rating
   def initialize(name, breed, age)
     @name = name
     @breed = breed
     @age = age
     @data = []
     @rating = 0
-    CATS << self
   end
-  attr_accessor :name, :breed, :age, :data, :rating
-   def Cat.add_data(x)
-     @rating << x
+   def add_data(x)
+     @data << x
    end
-   def Cat.average_rating
+   def average_rating
      unrounded_average = Cat.data.sum.to_f / Cat.data.sum.to_f
-     return unrounded_average.round(2)
+     @rating = unrounded_average.round(2)
    end
-   def Cat.high_rating(*cats)
+   def high_rating(*cats)
      cats.max_by(&:rating)
    end
-   def Cat.info(*cats)
+   def info(*cats)
       x = 0
      cats.each do |cat|
       x+=1
@@ -44,6 +42,8 @@ tikki = Kitten.new("Tikki", taffy.breed, 0.1)
 taffy.data = [5, 4, 4, 3, 5, 5, 5, 4, 5, 4, 2, 5, 4]
 tigga.data = [2, 3, 4, 4, 4, 3, 4, 4, 1, 5, 5, 3, 5]
 tikki.data = [5, 5, 5, 4, 5, 3, 5, 4, 4, 5, 3, 5, 4]
+tigga·add_data(5)
+
 
 puts "\n"
 puts "The cat with the highest rating is: #{Cat.high_rating(tigga, taffy, tikki).name}"
