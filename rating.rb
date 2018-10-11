@@ -1,3 +1,5 @@
+require "pry"
+
 # Main Code
 class Cat
   CATS = []
@@ -43,19 +45,12 @@ taffy.data = [5, 4, 4, 3, 5, 5, 5, 4, 5, 4, 2, 5, 4]
 tigga.data = [2, 3, 4, 4, 4, 3, 4, 4, 1, 5, 5, 3, 5]
 tikki.data = [5, 5, 5, 4, 5, 3, 5, 4, 4, 5, 3, 5, 4]
 
-highest = Cat.high_rating(taffy, tigga, tikki)
-puts "The highest rated cat is #{highest.name}."
 puts "\n"
-=begin
-Below doesn't work without being assigned to a variable to use instead?:
-puts "The cat with the highest rating is: #{Cat.high_rating(tigga, taffy, tikki)}"
-=end
+puts "The cat with the highest rating is: #{Cat.high_rating(tigga, taffy, tikki).name}"
+puts "\n"
 
-puts Cat.info(taffy, tigga, tikki)
-# produces: "#<Cat:0x000055cc591cc728>
-#<Cat:0x000055cc591cc7c8>
-#<Kitten:0x000055cc591cc638>"
-#unsure where from or how!
+Cat.info(taffy, tigga, tikki)
+
 puts "Which cat would you like to know about?"
 cat_name = gets.chomp
 cat_name.downcase!
@@ -67,14 +62,13 @@ while f == true
   puts "Options: Name, Age, Breed, Rating"
   request = gets.chomp
   request.downcase!
+  binding.pry
   if request == "end"
     f = false
-  elsif tigga.respond_to?(request)
+  elsif cat_name.respond_to?(request)
     puts "Checking for #{request}: "
-    puts tigga.send(request)
+    puts cat_name.send(request)
   else
       puts "invalid request"
   end
 end
-
-#when 'cat_name' is used in place of 'tigga' it comes up with 'invalid request' even though cat_name works correctly
